@@ -1,13 +1,28 @@
-<script>
-  var password = "1234"; // 在這裡設定你想給大家的密碼
-  var input = prompt("這是私人網頁，請輸入存取密碼：");
+<body style="margin:0; padding:0;">
+    <div id="secret-content" style="display:none;">
+        
+        <h1>這是你的網頁標題</h1>
+        <p>這是你想分享的資訊...</p>
+        
+    </div>
 
-  if (input !== password) {
-    alert("密碼錯誤！將無法查看內容。");
-    document.body.innerHTML = "<h1>密碼錯誤，請重新整理網頁再試一次。</h1>";
-    window.stop(); // 停止載入剩下的內容
-  }
-</script>
+    <script>
+        (function() {
+            var password = "0501"; // 設定密碼
+            var input = prompt("這是私人網頁，請輸入存取密碼：");
+
+            if (input === password) {
+                // 密碼正確，顯示內容
+                document.getElementById("secret-content").style.display = "block";
+            } else {
+                // 密碼錯誤，重新導向或顯示錯誤訊息
+                alert("密碼錯誤！將無法查看。");
+                window.location.href = "about:blank"; // 跳轉到空白頁
+            }
+        })();
+    </script>
+</body>
+
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
