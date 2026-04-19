@@ -1,29 +1,5 @@
-<body style="margin:0; padding:0;">
-    <div id="secret-content" style="display:none;">
-        
-        <h1>這是你的網頁標題</h1>
-        <p>這是你想分享的資訊...</p>
-        
-    </div>
-
-    <script>
-        (function() {
-            var password = "0501"; // 設定密碼
-            var input = prompt("這是私人網頁，請輸入存取密碼：");
-
-            if (input === password) {
-                // 密碼正確，顯示內容
-                document.getElementById("secret-content").style.display = "block";
-            } else {
-                // 密碼錯誤，重新導向或顯示錯誤訊息
-                alert("密碼錯誤！將無法查看。");
-                window.location.href = "about:blank"; // 跳轉到空白頁
-            }
-        })();
-    </script>
-</body>
-
 <!DOCTYPE html>
+
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
@@ -98,7 +74,7 @@ body{background:var(--cream);font-family:'Noto Sans JP',sans-serif;}
   <div class="chips">
     <span class="chip">✈ HND/伊丹→出雲</span>
     <span class="chip">◉ 5大人＋2幼兒</span>
-    <span class="chip">◈ 8人座 #99946190400</span>
+    <span class="chip">◈ 8人座租車</span>
   </div>
 </div>
 <div class="dnav" id="nav"></div>
@@ -108,12 +84,12 @@ body{background:var(--cream);font-family:'Noto Sans JP',sans-serif;}
 <script>
 const days=[
 {day:1,label:"5/1",date:"5月1日（五）",title:"出發・抵達出雲",
-tip:"楷棻 HND 16:55→18:25，楷婷 伊丹 18:10→18:55。租車番號：99946190400（8人座），取車後開車約30分鐘。",
+tip:"兩班飛機分別抵達後合流取車，機場開車約30分鐘抵達住宿。",
 hotel:{name:"出雲日和 堀川別邸 by HIYORISTAY",bk:false,dn:false,map:"出雲日和 堀川別邸"},
 spots:[
-{type:"航班",dot:"dt",time:"16:55",name:"楷棻：HND → 出雲緣結機場",desc:"羽田出發，18:25抵達。",tags:["飛行約1.5h"],map:"出雲縁結び空港"},
-{type:"航班",dot:"dt",time:"18:10",name:"楷婷：伊丹 → 出雲緣結機場",desc:"18:55抵達。兩班合流後取車。",tags:["飛行約45min","會合點"],map:"出雲縁結び空港"},
-{type:"取車",dot:"dtr",name:"租車取車（8人座）",desc:"番號：99946190400。確認8人座車及兒童安全座椅。",tags:["番號 99946190400","8人座"],map:"出雲縁結び空港 レンタカー"},
+{type:"航班",dot:"dt",time:"16:55",name:"Fen：HND → 出雲緣結機場",desc:"羽田出發，18:25抵達。",tags:["飛行約1.5h"],map:"出雲縁結び空港"},
+{type:"航班",dot:"dt",time:"18:10",name:"Ting：伊丹 → 出雲緣結機場",desc:"18:55抵達。兩班合流後取車。",tags:["飛行約45min","會合點"],map:"出雲縁結び空港"},
+{type:"取車",dot:"dtr",name:"租車取車（8人座）",desc:"確認8人座車及兒童安全座椅。",tags:["8人座","兒童座椅確認"],map:"出雲縁結び空港 レンタカー"},
 {type:"採買",dot:"dsp",name:"7-Eleven 出雲大社神門通店",desc:"取車後順路採買飲料、宵夜、隔天早餐備用品。",tags:["宵夜採買","神門通"],map:"セブンイレブン 出雲大社神門通り店"},
 {type:"入住",dot:"dh",name:"出雲日和 堀川別邸 by HIYORISTAY",desc:"整棟別邸風住宿，堀川水邊位置，距出雲大社步行可達。",tags:["整棟借用","堀川旁"],map:"出雲日和 堀川別邸"}
 ]},
@@ -151,7 +127,7 @@ spots:[
 {type:"公園",dot:"ds",name:"伯耆町総合スポーツ公園 ちびっこ広場",desc:"幼兒遊樂廣場，各式遊具，讓小朋友盡情放電跑跳。",tags:["幼兒遊樂","戶外公園"],map:"伯耆町総合スポーツ公園"}
 ]},
 {day:5,label:"5/5",date:"5月5日（二）",title:"鳥取砂丘・砂の美術館・浦富海岸",
-tip:"兒童節！砂丘玩沙請備替換衣物。Continuar 12:00已預約。下午浦富海岸停城原海岸停車場，沿岸自由漫步探索。",
+tip:"兒童節！砂丘玩沙請備替換衣物。Continuar 12:00已預約。下午浦富海岸停城原海岸停車場，沿岸自由漫步。",
 hotel:{name:"三上勘兵衛本店 Mikami Kanbe Honten",bk:false,dn:false,map:"三上勘兵衛本店 鳥取"},
 spots:[
 {type:"自然",dot:"ds",name:"鳥取砂丘",desc:"日本最大沙丘，落差約90m。幼兒在緩坡區盡情玩沙，另有駱駝騎乘體驗。",tags:["日本最大沙丘","幼兒玩沙"],map:"鳥取砂丘"},
@@ -184,27 +160,24 @@ spots:[
 {type:"歷史",dot:"ds",name:"北野 異人館街",desc:"明治時代外國人居留地，各國風格洋館，選2-3棟參觀即可。",tags:["異人館","明治洋館"],map:"北野異人館街 神戸"}
 ]},
 {day:9,label:"5/9",date:"5月9日（六）",title:"返程・帶回滿滿回憶",
-tip:"楷婷 13:30 神戶機場出發，建議11:30抵達機場。帶齊所有伴手禮，圓滿返航！",
+tip:"Ting 13:30 神戶機場出發，建議11:30抵達機場。帶齊所有伴手禮，圓滿返航！",
 hotel:null,
 spots:[
 {type:"早餐",dot:"dm",name:"飯店早餐・最後一次",desc:"從容享用早餐，整理行李辦理退房。",tags:["含早餐"],map:"神戸メリケンパークオリエンタルホテル"},
 {type:"採買",dot:"dsp",name:"最後手信補貨",desc:"補買：FRANTZ布丁（冷藏）、神戶牛佃煮、風月堂GOFRE。",tags:["最後採買","冷藏品注意"],map:"三宮 元町 神戸"},
-{type:"航班",dot:"dt",time:"13:30",name:"楷婷：神戶機場 出發",desc:"13:30起飛，建議11:30抵達機場。",tags:["13:30起飛","提前2h到"],map:"神戸空港"}
+{type:"航班",dot:"dt",time:"13:30",name:"Ting：神戶機場 出發",desc:"13:30起飛，建議11:30抵達機場。",tags:["13:30起飛","提前2h到"],map:"神戸空港"}
 ]}
 ];
 
 const nav=document.getElementById('nav'),cont=document.getElementById('content');
 let cur=0;
-
 function gmapUrl(q){return'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);}
-
 function mealPills(bk,dn){
   return`<div class="meal-pills">
     ${bk?'<span class="mpill mpill-bk">🍳 含早餐</span>':'<span class="mpill mpill-no">早餐 ✕</span>'}
     ${dn?'<span class="mpill mpill-dn">🍽 含晚餐</span>':'<span class="mpill mpill-no">晚餐 ✕</span>'}
   </div>`;
 }
-
 function renderNav(){
   nav.innerHTML='';
   days.forEach((d,i)=>{
@@ -215,7 +188,6 @@ function renderNav(){
     nav.appendChild(b);
   });
 }
-
 function renderDay(){
   const d=days[cur];
   let h=`<div class="dhdr"><div class="drow"><span class="dbadge">Day ${d.day}</span><span class="datebadge">${d.date}</span></div><div class="dtitle">${d.title}</div></div>
@@ -250,5 +222,6 @@ function renderDay(){
 }
 renderNav();renderDay();
 </script>
+
 </body>
 </html>
